@@ -7,26 +7,26 @@ while i==1:
     if denklem == "stop" :
         break
         
-    say = denklem.count('-') #b ve c katsayılarından kaçının negatif olduğunu ögreniyoruz.
+    say = denklem.count('-') #b ve c katsayılarından kaçının negatif olduğunu belirledim.
     if say > 0:#eğer negatif bir katsayı varsa,
-        index1 = int(denklem.find('²-'))#daha sonra katsayıları bulmamıza yarayacak indexleri belirliyoruz.
-        index2 = int(denklem.find('x-')) #eğer denklemde 'x-' bulunmazsa index - değerli olacaktır
-        if index1 < 0:#index - ise bunu düzeltmek için '²-'elemanı bulunmadığı için '²+' elemanını arıyoruz
+        index1 = int(denklem.find('²-'))#daha sonra katsayıları bulmamıza yarayacak indexleri tanımladım.
+        index2 = int(denklem.find('x-')) #eğer denklemde 'x-' bulunmazsa index - değerli oluyor.
+        if index1 < 0:#index - ise bunu düzeltmek için '²-'elemanı bulunmadığı için '²+' elemanını arattım.
                 index1 = int(denklem.find('²+'))
-        if index2 < 0:#aynı işlemi ikinci indexe uyarladık
+        if index2 < 0:#aynı işlemi ikinci indexe uyarladım.
             index2 = int(denklem.find('x+'))
-    if say == 0:#eğer negatif katsayı yoksa indexleri kontrol etmemize gerek yok direk tanımlıyoruz
+    if say == 0:#eğer negatif katsayı yoksa indexleri kontrol etmemize gerek yok direk tanımladım.
         index1 = int(denklem.find('²+'))
         index2 = int(denklem.find('x+'))
 
     a = str(denklem[:index1 -1 ])            
-    b = int(denklem[index1 + 1 : index2 ])  #daha önce tanımladığımız indexlerle katsayıları buluyoruz.
+    b = int(denklem[index1 + 1 : index2 ])  #daha önce tanımladığım indexlerle katsayıları buludum
     c = int(denklem[index2 + 1:])            
     if a == '': a = int(1)                                  # eger x² in önünde bir sayı girilmemiş   
     elif a == '-': a = int(-1)                              # yada - varsa 
-    elif a != '' or a != '-': a = int(denklem[:index1 -1 ]) # a katsayısının 1 yada -1 olarak tanımlıyoruz       
+    elif a != '' or a != '-': a = int(denklem[:index1 -1 ]) # a katsayısının 1 yada -1 olarak belirledim  
 
-    d = b**2 - 4*a*c  #denklemin discriminantını hesapladık
+    d = b**2 - 4*a*c  #denklemin discriminantını hesapttım.
 
     def tek_kok1() :#  d = 0, a != 1
         x1 = b / (2*a) 
@@ -93,7 +93,7 @@ while i==1:
     elif d == 0 and a == 1: tek_kok()                                            
     elif d > 0 and a == 1 : cift_kok()                                            
     elif d < 0 : print("Denklemin reel kökü yoktur.")                                         
-    # uygun durumlara göre tanımladığımız  fonksiyonları çağırıyoruz
+    # uygun durumlara göre tanımladığımız  fonksiyonları çağırıyorum.
 
 '''eksiklikler:
     1) a katsayısı asal değilse sonuçlar  küsüratlı çıkıyor bas katsayının carpanlarını dagıtmak yerine tek bir çarpanı genişletiyor 
