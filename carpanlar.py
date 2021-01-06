@@ -106,4 +106,4 @@ while i==1:
         (değilse direk hata veriyor)
     '''
 
-# "²" sembolü için "Alt"+"0178" tuslayın 
+# ² sembolünün klavye kombinasyonu: Alt + 0178
